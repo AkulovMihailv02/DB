@@ -1,0 +1,15 @@
+SELECT COUNT(*) AS total_users
+FROM users;
+
+SELECT AVG(prc) AS average_price
+FROM prod;
+
+SELECT MIN(prc) AS min_price, MAX(prc) AS max_price
+FROM prod;
+
+SELECT COUNT(*) AS total_products, SUM(prc) AS total_value
+FROM prod;
+
+SELECT COUNT(*) AS products_above_average
+FROM prod
+WHERE prc > (SELECT AVG(prc) FROM prod);
